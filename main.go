@@ -38,6 +38,8 @@ func generateRGBFromString(str string, steps int) RGBColor {
 	}
 }
 
+// linearGradient
+// generates a single pixel for the final color gradient
 func linearGradient(x, width int, initialColor, finalColor RGBColor) (uint8, uint8, uint8) {
 	d := float64(x) / float64(width)
 
@@ -48,6 +50,8 @@ func linearGradient(x, width int, initialColor, finalColor RGBColor) (uint8, uin
 	return uint8(r), uint8(g), uint8(b)
 }
 
+// generateImage
+// creates the image pixel by pixel
 func generateImage(width int, height int, initialColor RGBColor, finalColor RGBColor) *image.RGBA {
 	img := image.NewRGBA(image.Rect(0, 0, width, height))
 
