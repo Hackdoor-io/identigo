@@ -1,13 +1,9 @@
 package main
 
 import (
-	"fmt"
 	"hash/fnv"
 	"image"
 	"image/color"
-	"image/png"
-	"os"
-	"time"
 )
 
 type RGBColor = struct {
@@ -16,12 +12,17 @@ type RGBColor = struct {
 	B float64
 }
 
+// stringToUint32
+// takes a string as input and returns an uint32 representation
 func stringToUint32(s string) uint32 {
 	h := fnv.New32a()
 	h.Write([]byte(s))
 	return h.Sum32()
 }
 
+// generateRGBFromString
+// generates an RGB code (using the RGBColor struct) given a string
+// and an int (steps)
 func generateRGBFromString(str string, steps int) RGBColor {
 
 	intList := stringToUint32(str)
@@ -63,21 +64,10 @@ func generateImage(width int, height int, initialColor RGBColor, finalColor RGBC
 	return img
 }
 
-func main() {
-	start := time.Now()
-	str := "my_username"
-
+// GenerateFromString - generates a new identicon given a string, width, and height
+func GenerateFromString(str string, width int, height int) *image.RGBA {
 	initialColor := generateRGBFromString(str, 2)
 	finalColor := generateRGBFromString(str, 4)
 
-	resultImage := generateImage(500, 500, initialColor, finalColor)
-
-	img, _ := os.Create("new.png")
-	defer img.Close()
-
-	png.Encode(img, resultImage)
-	duration := time.Since(start)
-	fmt.Println(duration)
-
-	fmt.Println(generateRGBFromString("4e3ef92ed95e0776ff69797b475ccd58", 1))
+	return generateImage(500, 500, initialColor, finalColor)
 }
