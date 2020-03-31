@@ -6,6 +6,7 @@ import (
 	"image/color"
 )
 
+// RGBColor - an RGB color struct
 type RGBColor = struct {
 	R float64
 	G float64
