@@ -79,4 +79,5 @@ func main() {
 	duration := time.Since(start)
 	fmt.Println(duration)
 
+	fmt.Println(generateRGBFromString("4e3ef92ed95e0776ff69797b475ccd58", 1))
 }
