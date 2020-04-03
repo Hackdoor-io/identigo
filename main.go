@@ -74,5 +74,5 @@ func GenerateFromString(str string, width int, height int) *image.RGBA {
 	initialColor := generateRGBFromString(str, 2)
 	finalColor := generateRGBFromString(str, 4)
 
-	return generateImage(500, 500, initialColor, finalColor)
+	return generateImage(width, height, initialColor, finalColor)
 }
