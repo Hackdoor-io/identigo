@@ -76,3 +76,7 @@ func GenerateFromString(str string, width int, height int) *image.RGBA {
 
 	return generateImage(width, height, initialColor, finalColor)
 }
+
+func main() {
+
+}
