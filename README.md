@@ -25,17 +25,17 @@ func main() {
   str := "gopher"
   img := identigo.GenerateFromString(str, 256, 256)
 
-	file, _ := os.Create(str + ".png")
-	png.Encode(file, img)
+  file, _ := os.Create(str + ".png")
+  png.Encode(file, img)
 }
 ```
 where `GenerateFromString` accepts the following arguments:
 
-| Argument | Type     | Example   |
-|----------|----------|-----------|
-| `text`   | `string` | `"gopher" |
-| `width`  | `int`    | `256`     |
-| `height` | `int`    | `256`     |
+| Argument | Type     | Example    |
+|----------|----------|------------|
+| `text`   | `string` | `"gopher"` |
+| `width`  | `int`    | `256`      |
+| `height` | `int`    | `256`      |
 
 this code generates the following image:
 
