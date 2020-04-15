@@ -1,7 +1,6 @@
 <img src="/misc/identigo.png" width="100%" />
 
-[![Build Status](https://travis-ci.org/Hackdoor-io/identigo.svg?branch=master)](https://travis-ci.org/Hackdoor-io/identigo)
-
+![Build](https://github.com/Hackdoor-io/identigo/workflows/Go/badge.svg?branch=master)
 
 Identigo generates always the same image when given the same string. <br />
 That way, we'll be able to generate a beautiful gradient to be used as a temporary avatar for **Hackdoor** users.
